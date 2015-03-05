@@ -1,0 +1,69 @@
+---
+layout: default
+---
+
+<div class="container-fluid text-center">
+          <div class="jumbotron">
+            <div class="row">
+              <div class="col-md-10 col-md-offset-1">
+                <h1>
+                  Hello, my name is Siddharth.
+                </h1>
+                <p class="lead">
+                 I am a <a href="./../blog/">blogger</a> and freelance designer and developer.
+                </p>
+                <a href="http://siddharth-kinger.us10.list-manage1.com/subscribe?u=2d700966681b443b2410c2661&id=5c85ff6bee" class="button_y">Subscribe</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="filterable-portfolio container-fluid">
+
+          <div class="row">
+            <div class="col-md-12">
+              <ul class="nav nav-pills portfolio-filter">
+                <li class="portfolio-title">
+                  Filter by:
+                </li>
+                <li role="presentation" class="active">
+                  <a href="#" data-filter="*">All</a>
+                </li>
+                <li role="presentation">
+                  <a href="#" data-filter=".Illustration">Illustration</a>
+                </li>
+                <li role="presentation">
+                  <a href="#" data-filter=".logo-design">Logo Design</a>
+                </li>
+                <li role="presentation">
+                  <a href="#" data-filter=".ui">UI</a>
+                </li>
+                <li role="presentation">
+                  <a href="#" data-filter=".Design">Design</a>
+                </li>
+
+              </ul>
+            </div>
+          </div>
+
+          <div class="portfolio-items row">
+            
+                
+                
+                
+                
+                
+                {% for post in site.categories.portfolio %}
+                  <figure class="portfolio-item col-sm-4 {{post.tags}} ">
+                            <a href="{{ post.url | prepend: site.baseurl }}">
+                            <img src="{{post.image}}" class="img-responsive"/>
+                            </a>
+                           <p><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></p>
+                            
+                  </figure>
+
+                 
+                {% endfor %}
+
+        </div>
